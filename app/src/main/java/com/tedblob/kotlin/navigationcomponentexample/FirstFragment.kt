@@ -8,18 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_first.*
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FirstFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FirstFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        load?.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.load_fragment)
-        }
     }
 
     override fun onCreateView(
@@ -32,5 +24,9 @@ class FirstFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+
+        load?.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.load_fragment)
+        }
     }
 }
